@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan Luar Angkasa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- 🎵 AUDIO BACKGROUND -->
+<audio id="bg-music" loop></audio>
+
+<!-- 🎵 MUSIC CONTROLLER -->
+<div id="music-controller">
+    <button onclick="toggleMusic()"><i id="music-icon" class="fas fa-play"></i></button>
+</div>
+
+<div id="music-panel" class="hidden">
+    <div class="music-info">
+        <div id="music-title">Judul Lagu</div>
+        <div id="music-time">00:00 / 00:00</div>
+    </div>
+
+    <button class="music-close" onclick="closeMusicPanel()">✕</button>
+
+<div class="music-controls">
+    <button onclick="toggleMusic()">
+        <i id="music-icon-panel" class="fas fa-play"></i>
+    </button>
+    <button onclick="nextTrack()">
+        <i class="fas fa-forward"></i>
+    </button>
+</div>
+
+    <input type="range" min="0" max="1" step="0.01" onchange="setVolume(this.value)">
+</div>
+
+
+<body>
+
+    <section id="home-page" class="page active">
+        <div class="ornaments">
+            <img src="picture/bumi3.png" class="float-ornament planet-bg-1" alt="Planet">
+            <img src="picture/rocket2.png" class="float-ornament rocket" alt="Rocket">
+            <img src="picture/Meteor.png" class="float-ornament meteor" alt="Meteor">
+            <img src="picture/astronot.png" class="float-ornament astronaut" alt="Astronaut">
+            <video autoplay muted loop playsinline id="background-video">
+                <source src="picture/Galaxy.mp4" type="video/mp4">
+            </video>
+            <div class="star-field"></div>
+        </div>
+
+        <div class="home-content">
+            <h1>PETUALANGAN<br>LUAR ANGKASA</h1>
+            <button class="btn-main" onclick="navigateTo('menu-page')">Mulai Petualangan</button>
+            <p class="footer-text">✨ Jelajahi 8 planet • Mainkan permainan seru • Belajar sambil bermain ✨</p>
+        </div>
+    </section>
+
+    <section id="menu-page" class="page">
+        <div class="header">
+            <button class="btn-back" onclick="navigateTo('home-page')"><i class="fas fa-arrow-left"></i>
+                Kembali</button>
+            <h2>Planet - Planet Kita 🪐</h2>
+        </div>
+
+        <div class="section-box">
+            <h3 class="section-title">Permainan Seru 🎲</h3>
+            <div class="game-cards-container">
+                <div class="game-card card-purple" onclick="navigateTo('sort-game')">
+                    <i class="fas fa-gamepad icon-game"></i>
+                    <h4>Urutkan Planet</h4>
+                    <p>Seret Planet Ke urutan yang benar</p>
+                </div>
+                <div class="game-card card-blue" onclick="navigateTo('calc-page')">
+                    <i class="fas fa-calculator icon-game"></i>
+                    <h4>Kalkulator Berat</h4>
+                    <p>Berapa Beratmu di Planet Lain?</p>
+                </div>
+                <div class="game-card card-orange" onclick="startQuiz()">
+                    <i class="fas fa-file-circle-plus icon-game"></i>
+                    <h4>Quiz Planet</h4>
+                    <p>Jawab 10 Soal Tentang Planet!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-box mt-20">
+            <h3 class="section-title">Kenali Planet-Planet 🪐</h3>
+            <p class="subtitle">Klik pada planet untuk mengetahui identitasnya</p>
+            <div class="planet-grid" id="planet-grid">
+            </div>
+        </div>
+    </section>
+
+    <div id="planet-modal" class="modal">
+        <div class="modal-content">
+            <button class="btn-close" onclick="closeModal()">X</button>
+            <div class="modal-header">
+                <img id="modal-img" src="" alt="Planet">
+                <h2 id="modal-name">Nama Planet</h2>
+                <p id="modal-desc">"Julukan Planet"</p>
+            </div>
+            <div class="modal-stats">
+                <div class="stat-box">
+                    <small>Jarak dari Matahari</small>
+                    <div class="val"><i class="fas fa-sun"></i> <span id="modal-dist">0 km</span></div>
+                </div>
+                <div class="stat-box">
+                    <small>Suhu</small>
+                    <div class="val"><i class="fas fa-temperature-high"></i> <span id="modal-temp">0 C</span></div>
+                </div>
+                <div class="stat-box">
+                    <small>Jumlah Bulan</small>
+                    <div class="val"><i class="fas fa-moon"></i> <span id="modal-moons">0</span></div>
+                </div>
+                <div class="stat-box">
+                    <small>Diameter</small>
+                    <div class="val"><i class="fas fa-ruler-horizontal"></i> <span id="modal-diam">0 km</span></div>
+                </div>
+            </div>
+            <div class="modal-fact">
+                <h4>✨ Fakta Menarik ✨</h4>
+                <p id="modal-fact-text">Teks fakta menarik disini.</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="sort-game" class="page">
+        <div class="header">
+            <button class="btn-back" onclick="navigateTo('menu-page')"><i class="fas fa-arrow-left"></i>
+                Kembali</button>
+            <h2>Urutkan Planet 🪐</h2>
+            <button class="btn-reset" onclick="resetSortGame()"><i class="fas fa-undo"></i> Reset</button>
+        </div>
+
+        <div class="game-instruction">
+            <h3>Seret planet-planet ke kotak yang benar sesuai urutannya dari Matahari!</h3>
+            <p>Mulai dari yang paling dekat dengan Matahari (kiri) hingga yang paling jauh (kanan)</p>
+        </div>
+
+        <div class="drop-zones-container" id="drop-zones">
+        </div>
+
+        <h3 class="text-center mt-20" style="color:#ffcc00">Planet-planet yang harus diurutkan</h3>
+
+        <div class="drag-items-container" id="drag-items">
+        </div>
+
+        <div class="action-area">
+            <button class="btn-check" onclick="checkSortAnswer()">Cek Jawaban</button>
+        </div>
+
+        <div id="sort-result" class="result-overlay hidden">
+            <div class="result-box">
+                <h2 id="sort-msg-title">Hampir Benar!</h2>
+                <p id="sort-msg-desc">3/8 Coba lagi, kamu pasti bisa!</p>
+                <button onclick="closeSortResult()" class="btn-ok">OK</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="calc-page" class="page">
+        <div class="header">
+            <button class="btn-back" onclick="navigateTo('menu-page')"><i class="fas fa-arrow-left"></i>
+                Kembali</button>
+            <h2>📏 Kalkulator Berat Badan</h2>
+        </div>
+
+        <div class="banner-purple">
+            <h3>Berapa berat badanmu di planet lain? 🚀</h3>
+            <p>Berat badan kita berbeda di setiap planet karena gravitasinya berbeda!</p>
+        </div>
+
+        <div class="input-area">
+            <label>Masukkan Berat Badan di Bumi (kg) :</label>
+            <div class="input-group">
+                <input type="number" id="weight-input" placeholder="50">
+                <button onclick="calculateWeight()" class="btn-calc"><i class="fas fa-calculator"></i> Hitung</button>
+            </div>
+        </div>
+
+        <h3 class="text-center" style="color:#ffcc00; margin: 15px 0;">Beratmu di tempat lain:</h3>
+
+        <div class="weight-grid" id="weight-results">
+        </div>
+
+        <div class="fun-fact-box bottom-fact">
+            <h4>Tahukah Kamu?</h4>
+            <p>Berat badanmu di Bulan hanya sekitar 1/6 dari berat di Bumi karena gravitasi Bulan lebih lemah. Di
+                Jupiter, kamu akan lebih berat karena Jupiter memiliki gravitasi yang sangat kuat!</p>
+        </div>
+    </section>
+
+    <section id="quiz-page" class="page">
+        <div class="header">
+            <button class="btn-back" onclick="navigateTo('menu-page')"><i class="fas fa-arrow-left"></i>
+                Kembali</button>
+            <h2>🎯 Quiz Planet</h2>
+            <div class="score-badge">Skor <span id="current-score">0</span></div>
+        </div>
+        <p class="text-center" style="color: #ffcc00; font-weight: bold;">Soal <span id="question-number">1</span> dari
+            10</p>
+
+        <div class="quiz-progress">
+            <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+        </div>
+
+
+        <div class="quiz-container">
+            <div class="question-box">
+                <h3 id="question-text">Planet manakah yang paling dekat dengan Matahari?</h3>
+            </div>
+
+            <div class="options-container" id="quiz-options">
+            </div>
+
+            <div id="quiz-feedback" class="feedback-box hidden">
+                <div id="feedback-icon" class="fb-icon"></div>
+                <div class="fb-text">
+                    <h4 id="feedback-title">Jawaban Benar!</h4>
+                    <p id="feedback-desc">Penjelasan jawaban disini.</p>
+                </div>
+            </div>
+
+            <div class="quiz-actions">
+                <button id="btn-next-q" class="btn-next hidden" onclick="nextQuestion()">Soal Berikutnya ></button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

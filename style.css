@@ -1,0 +1,930 @@
+/* Di file style.css */
+
+.home-content {
+    /* --- TAMBAHKAN BARIS INI --- */
+    position: relative;
+    /* --------------------------- */
+
+    z-index: 100;
+    /* Saya naikkan angkanya agar lebih aman */
+    text-align: center;
+}
+
+/* --- RESET & GLOBAL --- */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --border-glow: 1px solid rgba(255, 255, 255, 0.3);
+    --font-main: 'Fredoka', sans-serif;
+    --primary-purple: #a18cd1;
+    --primary-pink: #fbc2eb;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--bg-gradient);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse-grow {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Cari bagian .page di style.css dan pastikan seperti ini */
+.page {
+    display: none;
+    /* Menyembunyikan halaman secara total */
+    padding: 20px;
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    /* Menumpuk di posisi yang sama */
+    top: 0;
+    left: 0;
+}
+
+.page.active {
+    display: block;
+    /* Hanya menampilkan halaman yang memiliki class active */
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- HOME PAGE --- */
+#home-page {
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.page.active {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.4s ease-out;
+}
+
+#home-page:not(.active) .ornaments {
+    display: none;
+}
+
+.ornaments {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.home-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.ornaments img {
+    position: absolute;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.float-ornament {
+    animation: float 4s ease-in-out infinite;
+}
+
+.planet-bg-1 {
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    animation-duration: 6s;
+}
+
+.rocket {
+    bottom: 2%;
+    left: 2%;
+    width: 300px;
+    animation-duration: 5s;
+    transform: rotate(45deg);
+}
+
+.meteor {
+    top: 15%;
+    left: 15%;
+    width: 200px;
+    animation-duration: 3s;
+}
+
+.astronaut {
+    bottom: 10%;
+    right: 10%;
+    width: 300px;
+    animation-duration: 4.5s;
+}
+
+.home-content {
+    z-index: 10;
+    text-align: center;
+}
+
+#background-video {
+    position: absolute;
+    opacity: 40%;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Pastikan konten utama Anda berada di atas video */
+body {
+    position: relative;
+    /* Atau elemen pembungkus konten Anda */
+    z-index: 1;
+}
+
+
+h1 {
+    font-size: 4rem;
+    background: linear-gradient(to right, #ffcc00, #ff6600);
+
+    /* --- BAGIAN YANG DIPERBAIKI --- */
+    -webkit-background-clip: text;
+    /* Untuk browser Chrome/Safari lama */
+    background-clip: text;
+    /* Standar properti (WAJIB DITAMBAHKAN) */
+
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.btn-main {
+    background: linear-gradient(90deg, #8e2de2, #4a00e0);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+    transition: transform 0.2s;
+}
+
+.btn-main:hover {
+    transform: scale(1.1);
+}
+
+.footer-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+/* --- MENU PAGE --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-back,
+.btn-reset,
+.btn-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: var(--font-main);
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.section-box {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #4a90e2;
+}
+
+.section-title {
+    color: #ffcc00;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    color: #ccc;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.game-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.game-card {
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    height: 100%;
+    color: white;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+.card-purple {
+    background: linear-gradient(45deg, #b000ff, #7f00ff);
+}
+
+.card-blue {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+}
+
+.card-orange {
+    background: linear-gradient(45deg, #f8b500, #fceabb);
+    color: #333;
+}
+
+.card-orange h4,
+.card-orange p {
+    color: #333;
+    font-weight: bold;
+}
+
+.icon-game {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* PLANET GRID */
+.planet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .planet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.planet-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.planet-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    border-color: #ffcc00;
+}
+
+.planet-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+
+.planet-card:hover .planet-img {
+    transform: rotate(360deg);
+}
+
+.planet-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.planet-role {
+    font-size: 0.8rem;
+    color: #ffcc00;
+}
+
+/* --- MODAL --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(180deg, #a18cd1 0%, #fbc2eb 100%);
+    /* Mirip gambar */
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+    border: 4px solid white;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    color: #a18cd1;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-img {
+    width: 120px;
+    animation: float 3s infinite ease-in-out;
+    margin-top: -50px;
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+}
+
+#modal-name {
+    font-size: 2rem;
+    margin: 10px 0 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#modal-desc {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.modal-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    text-align: left;
+}
+
+.stat-box small {
+    font-size: 0.7rem;
+    display: block;
+    opacity: 0.9;
+}
+
+.stat-box .val {
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.modal-fact {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px dashed white;
+}
+
+.modal-fact h4 {
+    color: #ffe600;
+    margin-bottom: 5px;
+}
+
+.modal-fact p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* --- GAME: SORT PLANETS --- */
+.game-instruction {
+    text-align: center;
+    background: linear-gradient(90deg, #9d50bb, #6e48aa);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.game-instruction h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.game-instruction p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.drop-zones-container,
+.drag-items-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+
+    .drop-zones-container,
+    .drag-items-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.drop-zone {
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: 0.3s;
+}
+
+.drop-zone.hovered {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffcc00;
+}
+
+.drop-zone span {
+    font-size: 0.8rem;
+    color: #aaa;
+    pointer-events: none;
+}
+
+.drop-zone.correct {
+    border: 2px solid #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+}
+
+.drop-zone.wrong {
+    border: 2px solid #ff0000;
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.draggable-planet {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: grab;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.draggable-planet:active {
+    cursor: grabbing;
+}
+
+.draggable-planet img {
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+}
+
+.draggable-planet p {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    pointer-events: none;
+}
+
+.action-area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-check {
+    background: linear-gradient(to right, #2980b9, #6dd5fa);
+    border: none;
+    padding: 12px 50px;
+    color: white;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(41, 128, 185, 0.5);
+}
+
+.result-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.result-box {
+    background: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.result-box h2 {
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.btn-ok {
+    background: #333;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* --- CALCULATOR PAGE --- */
+.banner-purple {
+    background: linear-gradient(90deg, #bd00ff, #e600ff);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.input-area {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #aaa;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#weight-input {
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 100px;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    font-family: var(--font-main);
+}
+
+.btn-calc {
+    background: #4a00e0;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.weight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.weight-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.weight-card.highlight {
+    background: #ffe600;
+    color: #333;
+    font-weight: bold;
+}
+
+.weight-card h5 {
+    margin: 5px 0;
+}
+
+.weight-val {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffcc00;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.weight-card.highlight .weight-val {
+    color: #333;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.weight-status {
+    font-size: 0.7rem;
+}
+
+.bottom-fact {
+    background: linear-gradient(90deg, #ff9966, #ff5e62);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- QUIZ PAGE --- */
+
+
+.score-badge {
+    background: #333;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.question-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 20px;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-btn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    transition: 0.2s;
+}
+
+.option-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.option-btn.correct {
+    background: #28a745;
+    border-color: #28a745;
+}
+
+.option-btn.wrong {
+    background: #dc3545;
+    border-color: #dc3545;
+}
+
+.feedback-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.feedback-box.correct {
+    background: #d4edda;
+    color: #155724;
+}
+
+.feedback-box.wrong {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.fb-icon {
+    font-size: 2rem;
+}
+
+.btn-next {
+    width: 100%;
+    background: linear-gradient(90deg, #56ab2f, #a8e063);
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* --- QUIZ PROGRESS BAR --- */
+.quiz-progress {
+    width: 100%;
+    max-width: 600px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin: 10px auto 15px;
+    overflow: hidden;
+}
+
+.quiz-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00ffcc, #00c6ff);
+    transition: width 0.4s ease;
+}
+
+/* 🎵 MUSIC CONTROLLER */
+#music-controller {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 300;
+}
+
+#music-controller button {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#music-panel {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 300;
+    width: 180px;
+}
+
+.music-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.music-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#music-panel input[type="range"] {
+    width: 100%;
+}
+
+.music-info {
+    text-align: center;
+    color: #fff;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+#music-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+#music-time {
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+.music-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
