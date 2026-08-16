@@ -1,4 +1,4 @@
-# 🚀 Web Petualangan Luar Angkasa Anak SD
+#  Web Petualangan Luar Angkasa Anak SD
 
 Website edukasi interaktif bertema luar angkasa yang dirancang untuk membantu anak-anak Sekolah Dasar mengenal planet-planet di Tata Surya melalui materi, permainan, dan kuis yang menyenangkan.
 
@@ -6,7 +6,7 @@ Website ini menggabungkan pembelajaran dengan elemen permainan agar anak-anak da
 
 ---
 
-## 🌌 Tentang Website
+##  Tentang Website
 
 **Petualangan Luar Angkasa** merupakan website edukasi yang memperkenalkan 8 planet di Tata Surya, yaitu:
 
@@ -25,9 +25,9 @@ Website dibuat dengan konsep visual yang menarik dan berwarna agar lebih sesuai 
 
 ---
 
-## ✨ Fitur Utama
+##  Fitur Utama
 
-### 🪐 1. Mengenal Planet
+###  1. Mengenal Planet
 
 Pengguna dapat memilih salah satu dari 8 planet untuk melihat informasi mengenai planet tersebut.
 
@@ -43,7 +43,7 @@ Informasi yang ditampilkan meliputi:
 
 ---
 
-### 🎮 2. Permainan Urutkan Planet
+###  2. Permainan Urutkan Planet
 
 Permainan untuk menguji kemampuan pengguna dalam mengurutkan planet berdasarkan jaraknya dari Matahari.
 
@@ -55,7 +55,7 @@ Setelah selesai, pengguna dapat menekan tombol **"Cek Jawaban"** untuk mengetahu
 
 ---
 
-### ⚖️ 3. Kalkulator Berat Badan
+###  3. Kalkulator Berat Badan
 
 Fitur yang memungkinkan pengguna mengetahui perkiraan berat badannya jika berada di planet lain.
 
@@ -79,7 +79,7 @@ Fitur ini membantu pengguna memahami bahwa gravitasi setiap planet berbeda.
 
 ---
 
-### 🧠 4. Quiz Planet
+###  4. Quiz Planet
 
 Kuis interaktif yang terdiri dari **10 soal** mengenai planet dan Tata Surya.
 
@@ -100,7 +100,7 @@ Pengguna harus memilih jawaban yang paling tepat untuk mendapatkan skor.
 
 ---
 
-### 🎵 5. Musik / Suara Latar
+###  5. Musik / Suara Latar
 
 Website dilengkapi dengan musik latar untuk membuat pengalaman belajar menjadi lebih menarik.
 
@@ -108,7 +108,7 @@ Pengguna dapat mengatur musik menggunakan tombol kontrol yang tersedia di halama
 
 ---
 
-### 🚀 6. Tampilan Interaktif
+###  6. Tampilan Interaktif
 
 Website menggunakan tema luar angkasa dengan:
 
@@ -141,15 +141,15 @@ Website ini dibuat menggunakan teknologi web dasar:
 
 ---
 
-## 📂 Struktur Folder
+##  Struktur Folder
 
 ```text
 Web-Pendidikan-Petualangan-Luar-Angkasa-Anak-SD/
 │
-├── 📁 Music/
+├──  Music/
 │   └── File musik website
 │
-├── 📁 picture/
+├──  picture/
 │   ├── Gambar planet
 │   ├── Ilustrasi
 │   └── Galaxy.mp4
