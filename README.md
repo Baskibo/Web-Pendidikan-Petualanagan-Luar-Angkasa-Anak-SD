@@ -1,4 +1,4 @@
-# 🚀 Petualangan Luar Angkasa Anak SD
+# Petualangan Luar Angkasa Anak SD
 
 Website edukasi interaktif bertema luar angkasa yang dibuat untuk membantu anak-anak Sekolah Dasar mengenal **8 planet di Tata Surya** melalui materi, permainan, kalkulator, dan kuis yang menyenangkan.
 
@@ -6,52 +6,52 @@ Proyek ini menggabungkan konsep **belajar sambil bermain (learning through play)
 
 ---
 
-## 🌌 Preview Website
+## Preview Website
 
-### 🏠 Halaman Utama
+### Halaman Utama
 <p align="center">
   <img src="screenshots/01-home.png" alt="Halaman utama Petualangan Luar Angkasa" width="90%">
 </p>
 
-### 🪐 Mengenal Planet
+### Mengenal Planet
 <p align="center">
   <img src="screenshots/02-mengenal-planet.png" alt="Halaman mengenal planet" width="90%">
 </p>
 
-### 🎮 Permainan Urutkan Planet
+### Permainan Urutkan Planet
 <p align="center">
   <img src="screenshots/03-urutkan-planet.png" alt="Permainan mengurutkan planet" width="90%">
 </p>
 
-### ⚖️ Kalkulator Berat Badan
+### Kalkulator Berat Badan
 <p align="center">
   <img src="screenshots/04-kalkulator-berat.png" alt="Kalkulator berat badan di planet lain" width="90%">
 </p>
 
-### 🎯 Quiz Planet
+### Quiz Planet
 <p align="center">
   <img src="screenshots/05-quiz-planet.png" alt="Quiz Planet" width="90%">
 </p>
 
-### 🔎 Detail Informasi Planet
+### Detail Informasi Planet
 <p align="center">
   <img src="screenshots/06-detail-planet.png" alt="Modal detail informasi planet" width="90%">
 </p>
 
 ---
 
-## 📖 Tentang Website
+## Tentang Website
 
 **Petualangan Luar Angkasa** merupakan website edukasi interaktif yang memperkenalkan 8 planet di Tata Surya:
 
-- ☿️ Merkurius
-- ♀️ Venus
-- 🌍 Bumi
-- ♂️ Mars
-- ♃ Jupiter
-- ♄ Saturnus
-- ♅ Uranus
-- ♆ Neptunus
+- Merkurius
+- Venus
+- Bumi
+- Mars
+- Jupiter
+- Saturnus
+- Uranus
+- Neptunus
 
 Website dirancang dengan pendekatan visual yang cerah dan interaktif agar anak-anak dapat mempelajari informasi dasar mengenai planet dengan cara yang lebih menyenangkan.
 
@@ -59,9 +59,9 @@ Selain membaca materi, pengguna juga dapat mencoba permainan, menghitung berat b
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
-### 1. 🪐 Mengenal Planet
+### 1. Mengenal Planet
 
 Pengguna dapat memilih salah satu dari 8 planet untuk melihat informasi mengenai planet tersebut.
 
@@ -77,7 +77,7 @@ Informasi yang tersedia meliputi:
 
 Informasi ditampilkan melalui **modal interaktif**, sehingga pengguna dapat membuka dan menutup detail planet tanpa berpindah halaman.
 
-### 2. 🎮 Permainan Urutkan Planet
+### 2. Permainan Urutkan Planet
 
 Permainan untuk melatih pengguna mengurutkan planet berdasarkan jaraknya dari Matahari.
 
@@ -87,7 +87,7 @@ Urutan yang benar:
 
 Pengguna menyusun planet pada kotak yang tersedia kemudian menekan tombol **"Cek Jawaban"** untuk mengetahui hasilnya.
 
-### 3. ⚖️ Kalkulator Berat Badan
+### 3. Kalkulator Berat Badan
 
 Pengguna dapat memasukkan berat badan di Bumi untuk mengetahui perkiraan beratnya jika berada di planet lain.
 
@@ -99,7 +99,7 @@ Sistem kemudian menghitung berat berdasarkan perbedaan gravitasi setiap planet.
 
 Fitur ini membantu memperkenalkan konsep bahwa **gravitasi setiap planet berbeda**.
 
-### 4. 🎯 Quiz Planet
+### 4. Quiz Planet
 
 Kuis interaktif yang terdiri dari **10 soal** mengenai planet dan Tata Surya.
 
@@ -113,13 +113,13 @@ Fitur kuis:
 - Informasi benar/salah
 - Penjelasan jawaban
 
-### 5. 🎵 Musik / Suara Latar
+### 5. Musik / Suara Latar
 
 Website dilengkapi musik latar bertema luar angkasa untuk membuat pengalaman belajar lebih menarik.
 
 Pengguna dapat mengontrol musik menggunakan tombol yang tersedia pada halaman.
 
-### 6. 🌠 Tampilan Interaktif
+### 6. Tampilan Interaktif
 
 Desain website menggunakan tema luar angkasa dengan berbagai elemen visual:
 
@@ -135,7 +135,7 @@ Desain website menggunakan tema luar angkasa dengan berbagai elemen visual:
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 | Teknologi | Penggunaan |
 |---|---|
@@ -148,7 +148,7 @@ Desain website menggunakan tema luar angkasa dengan berbagai elemen visual:
 
 ---
 
-## 📁 Struktur Folder
+## Struktur Folder
 
 ```text
 Web-Petualangan-Luar-Angkasa-Anak-SD/
@@ -173,7 +173,7 @@ Web-Petualangan-Luar-Angkasa-Anak-SD/
 
 ---
 
-## ▶️ Cara Menjalankan
+## Cara Menjalankan
 
 ### Menjalankan secara lokal
 
@@ -194,7 +194,7 @@ Karena website menggunakan HTML, CSS, dan JavaScript, website dapat dijalankan l
 
 ---
 
-## 🎓 Tujuan Proyek
+## Tujuan Proyek
 
 Proyek ini dibuat sebagai media pembelajaran interaktif untuk:
 
@@ -206,7 +206,7 @@ Proyek ini dibuat sebagai media pembelajaran interaktif untuk:
 
 ---
 
-## 👦 Target Pengguna
+## Target Pengguna
 
 Website ditujukan terutama untuk:
 
@@ -216,55 +216,55 @@ Website ditujukan terutama untuk:
 
 ---
 
-## 📌 Status Project
+## Status Project
 
-**Status:** ✅ Selesai / Siap dipublikasikan
+**Status:** Selesai / Siap dipublikasikan
 
 Fitur utama yang tersedia:
 
-- [x] Materi 8 planet
-- [x] Detail informasi planet
-- [x] Permainan urutkan planet
-- [x] Kalkulator berat badan
-- [x] Quiz 10 soal
-- [x] Sistem skor
-- [x] Musik latar
-- [x] Tampilan responsif
-- [x] Dokumentasi README
+- Materi 8 planet
+- Detail informasi planet
+- Permainan urutkan planet
+- Kalkulator berat badan
+- Quiz 10 soal
+- Sistem skor
+- Musik latar
+- Tampilan responsif
+- Dokumentasi README
 
 ---
 
-## 💡 Pengembangan Selanjutnya
+## Pengembangan Selanjutnya
 
 Beberapa fitur yang dapat dikembangkan pada versi berikutnya:
 
-- 🌍 Animasi orbit planet yang lebih interaktif.
-- 🏆 Sistem achievement atau badge.
-- ⭐ Sistem poin dan reward.
-- 🔊 Narasi suara untuk materi planet.
-- 📱 Optimasi tampilan untuk perangkat mobile.
-- 💾 Penyimpanan progress belajar pengguna.
-- 🌙 Mode malam/siang.
-- 🧩 Permainan edukasi tambahan.
-- 📝 Penambahan materi tentang Matahari, Bulan, asteroid, dan komet.
+- Animasi orbit planet yang lebih interaktif.
+- Sistem achievement atau badge.
+- Sistem poin dan reward.
+- Narasi suara untuk materi planet.
+- Optimasi tampilan untuk perangkat mobile.
+- Penyimpanan progress belajar pengguna.
+- Mode malam/siang.
+- Permainan edukasi tambahan.
+- Penambahan materi tentang Matahari, Bulan, asteroid, dan komet.
 
 ---
 
-## 📷 Dokumentasi
+## Dokumentasi
 
 Screenshot pada bagian **Preview Website** digunakan untuk memberikan gambaran tampilan dan fitur utama website sebelum pengguna menjalankan project.
 
 ---
 
-## 📄 Lisensi
+## Lisensi
 
 Project ini menggunakan lisensi yang tercantum pada file [`LICENSE`](LICENSE).
 
 ---
 
-## 👨‍💻 Author
+## Author
 
-**Fakhriy**
+**Muhammad Fakhriy Al Farizi**
 
 Project: **Petualangan Luar Angkasa Anak SD**
 
