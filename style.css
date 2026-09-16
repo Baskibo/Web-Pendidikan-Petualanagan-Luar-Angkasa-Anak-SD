@@ -1,12 +1,7 @@
-/* Di file style.css */
-
 .home-content {
-    /* --- TAMBAHKAN BARIS INI --- */
     position: relative;
-    /* --------------------------- */
-
     z-index: 100;
-    /* Saya naikkan angkanya agar lebih aman */
+
     text-align: center;
 }
 
@@ -74,15 +69,12 @@ body {
     }
 }
 
-/* Cari bagian .page di style.css dan pastikan seperti ini */
 .page {
     display: none;
-    /* Menyembunyikan halaman secara total */
     padding: 20px;
     min-height: 100vh;
     width: 100%;
     position: absolute;
-    /* Menumpuk di posisi yang sama */
     top: 0;
     left: 0;
 }
@@ -201,10 +193,8 @@ body {
     z-index: -1;
 }
 
-/* Pastikan konten utama Anda berada di atas video */
 body {
     position: relative;
-    /* Atau elemen pembungkus konten Anda */
     z-index: 1;
 }
 
@@ -212,13 +202,8 @@ body {
 h1 {
     font-size: 4rem;
     background: linear-gradient(to right, #ffcc00, #ff6600);
-
-    /* --- BAGIAN YANG DIPERBAIKI --- */
     -webkit-background-clip: text;
-    /* Untuk browser Chrome/Safari lama */
     background-clip: text;
-    /* Standar properti (WAJIB DITAMBAHKAN) */
-
     -webkit-text-fill-color: transparent;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     margin-bottom: 30px;
@@ -743,8 +728,6 @@ h1 {
 }
 
 /* --- QUIZ PAGE --- */
-
-
 .score-badge {
     background: #333;
     padding: 5px 15px;
@@ -852,7 +835,7 @@ h1 {
     transition: width 0.4s ease;
 }
 
-/* 🎵 MUSIC CONTROLLER */
+/* MUSIC CONTROLLER */
 #music-controller {
     position: fixed;
     bottom: 20px;
