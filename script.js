@@ -1,5 +1,4 @@
 /* --- DATA PLANETS --- */
-// Ganti URL gambar dengan path file lokal Anda (misal: 'assets/mercury.png')
 const planetsData = [
     { id: 'mercury', name: 'Merkurius', role: 'Planet Terkecil', img: 'picture/Merkurius3.png', dist: '57,9 Juta km', temp: '-173°C s/d 427°C', moons: 'Tidak ada', diam: '4.879 km', fact: 'Merkurius bergerak paling cepat untuk mengelilingi Matahari.', gravity: 0.38 },
     { id: 'venus', name: 'Venus', role: 'Bintang Fajar', img: 'picture/Venus.png', dist: '108,2 Juta km', temp: '462 °C', moons: 'Tidak ada', diam: '12.109 km', fact: 'Venus lebih panas daripada planet lain meskipun bukan yang terdekat ke Matahari.', gravity: 0.91 },
@@ -12,7 +11,6 @@ const planetsData = [
 ];
 
 /* --- NAVIGATION --- */
-/* Cari fungsi navigateTo di script.js dan ganti dengan ini */
 function navigateTo(pageId) {
     // 1. Ambil semua elemen dengan class 'page'
     const allPages = document.querySelectorAll('.page');
@@ -233,7 +231,7 @@ function loadQuestion() {
     document.getElementById('quiz-feedback').classList.add('hidden');
     document.getElementById('btn-next-q').classList.add('hidden');
 
-    updateProgressBar(); // ⬅️ WAJIB ADA DI SINI
+    updateProgressBar(); 
 
     const optsContainer = document.getElementById('quiz-options');
     optsContainer.innerHTML = '';
@@ -241,7 +239,6 @@ function loadQuestion() {
     q.options.forEach((opt, idx) => {
         const btn = document.createElement('button');
         btn.className = 'option-btn';
-        // A, B, C, D labels
         const labels = ['A', 'B', 'C', 'D'];
         btn.innerText = `${labels[idx]}. ${opt}`;
         btn.onclick = () => checkAnswer(idx, btn);
@@ -311,7 +308,7 @@ function updateProgressBar() {
 }
 
 
-/* 🎵 BACKGROUND MUSIC SYSTEM */
+/* BACKGROUND MUSIC SYSTEM */
 const playlist = [
     { title: "Stars and Planets", src: 'Music/3.mp3' },
     { title: "Galaxy Adventure", src: 'Music/2.mp3' },
@@ -400,7 +397,6 @@ window.addEventListener("load", () => {
         document.getElementById("music-icon").className = "fas fa-pause";
         document.getElementById("music-icon-panel").className = "fas fa-pause";
     }).catch(() => {
-        // Jika browser blokir, akan play setelah klik pertama
     });
 });
 
